@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="https://c2.img.netmarble.kr/web/2005/img/common/main/netmarblebi_110701.ico">
+    <!-- <link rel="stylesheet" type="text/css" href="https://c1.img.netmarble.kr/web/netmarble/mobile/v2/css/mobile.css"> -->
+    
+    <title>넷마블 | 모바일 게임 - 즐거운 게임세상 넷마블!</title>
+    <style>
+        em, strong {
+                font-size: 10px;
+        }
+        body {
+                min-width: 1650px;
+                
+        }
+        .wrap {
+            width: 1650px;
+            height: 2488px;
+        }
+
+        #header {
+            position: fixed;
+            z-index: 100;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 240px;
+            height: 100%;
+            min-height: 800px;
+            background-color: #fff;
+            box-shadow: 22px 0 40px 0 rgb(49 52 132 / 10%);
+        }
+
+        .gnb {
+            box-sizing: border-box;
+            height: 100%;
+            padding: 70px 25px;
+        }
+
+        .gnb .logo {
+            display: block;
+            width: 158px;
+            height: 31px;
+            margin: 0 auto 66px;
+            background-position: 0 0;
+            background: url(../img/icon/netmarble-ci.svg) no-repeat 0 0;
+            text-decoration: none;
+        }
+        .gnb .logo a {
+                color: #171717;
+        }
+        .gnb .lg_box {
+            margin-bottom: 50px;
+            padding: 20px 20px;
+            border: 1px solid rgba(207,207,207, 0.3);
+           
+            
+        }
+        .gnb .lg_box .link_login {
+                color: #171717;
+                background: url('./img/login.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                /* padding-left: 30px; */
+                display: block;
+                position: relative;
+                height: 25px;
+                margin-bottom: 15px;
+                padding-left: 40px;
+                
+        }
+        .gnb .lg_box .lg_btm {
+                height: 14px;
+                line-height: 14px;
+        }
+        .gnb .lg_btm em {
+                color: #171717;
+                opacity: 0.6;
+        }
+        .gnb .menu {
+            margin-bottom: 190px;
+            margin-left: -20px;
+           
+        }
+        .gnb .menu li {
+                position: relative;
+        }
+        .gnb .menu li a {
+                height: 22px;
+                padding-left: 25px;
+                
+                color: rgba(66,66,66, .95);
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 30px;
+                /* background: orange; */
+        }
+       .gnb .menu .mn-customer {
+                background-image: url('./img/sp-main.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+       }
+       
+       .gnb .menu .mn-pc {
+                background-image: url('./img/sp-main2.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+       }
+       .gnb .menu .mn-event {
+                background-image: url('./img/sp-main3.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+       }
+       .gnb .menu .mn-ch {
+                background-image: url('./img/sp-main4.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+       }
+       .gnb .menu .mn-store {
+                background-image: url('./img/sp-main5.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+       }
+        .container {
+            position: absolute;
+            padding: 0 0 0 240px;
+        }
+        .list_game .desc_wrap .title {
+                position: absolute;
+                letter-spacing: -0.6px;
+                color: #212121;
+                font-family: "NotoSansKR_Medium";
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 1.0;
+                vertical-align: middle;
+        }
+        .content {
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 230vh;
+            margin: 0 auto;
+            padding: 0 35px 110px 35px;
+            text-align: left;
+        }
+        a {
+                text-decoration: none;
+        }
+        ul, li {
+            list-style: none;
+        }
+
+        .list_sort {
+            margin-bottom: 50px;
+            padding: 80px 0 0 40px;
+        }
+
+        .list_sort li {
+            display: block;
+            float: left;
+            height: 40px;
+        }
+        .list_sort li button {
+                background: #fff;
+                border: 0;
+                outline: 0;
+                width: 110px;
+                display: block;
+                box-sizing: border-box;
+                border-radius: 20px;
+                text-align: center;
+                line-height: 40px;
+                transition: background-color, box-shadow .3s , .2s;
+
+        }
+        .list_sort li .on {
+                color: #fff;
+                background: #ff4e4f;
+        }
+        .list_sort li button:hover {
+                background: #ff4e4f;
+                color: #fff;
+        }
+
+        .list_game .list {
+            margin: 100px 25px;
+        }
+
+        
+        .list_game .list li {
+                position: relative;
+                float: left;
+                width: 460px;
+                height: 180px;
+                margin: 20px 20px 15px 10px;
+                transition: all 0.3s;
+                border-radius: 18px;
+                background-color: #f8fafc;
+        }
+        .list_game .list li > a {
+            display: block;
+            box-sizing: border-box;
+            height: 180px;
+            padding: 30px;
+            position: relative;
+        }
+        .list_game .img_wrap {
+            display: block;
+            float: left;
+            overflow: hidden;
+            width: 120px;
+            height: 120px;
+            margin-right: 19px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        img {
+            vertical-align: top;
+        }
+        .list_game .img_wrap img {
+            height: 100%;
+        }
+        .list_game .desc_wrap {
+            display: block;
+            padding-top: 8px;
+        }
+        .list_game .desc_wrap .title {
+            letter-spacing: -0.6px;
+            color: #212121;
+            font-family: "NotoSansKR_Medium";
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.2;
+            vertical-align: middle;
+        }
+        .list_game .desc_wrap .title + .ico_label {
+            margin-left: 220px;
+        }
+        
+        .ico_label.hot {
+            
+            background-image: url('./img/hot.PNG');
+            background-repeat: no-repeat;
+        }
+        .ico_label {
+           display: inline-block;
+           width: 31px;
+           height: 20px;
+           vertical-align: middle;
+        }
+        
+        .list_game .desc_wrap .cate {
+                display: block;
+                opacity: 0.8;
+                color: #8f8f8f;
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 1.5;
+                margin-top: 20px;
+        }
+        .list_game .btn_wrap .link_playstore {
+                width: 15px;
+                height: 20px;
+                /* 구글 이미지 넣기 */
+                background-image: url('./img/sp-main5.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+        }
+        .list_game .btn_wrap .link_appstore {
+                width: 15px;
+                height: 20px;
+                /* 애플 이미지 넣기*/
+                background-image: url('./img/sp-main5.PNG');
+                background-repeat: no-repeat;
+                background-position: left center;
+                background-size: 30px;
+                padding-left: 30px;
+        }
+        /* .list_game .btn_wrap .link_playstore::after {
+            width: 19px;
+            height: 23px;
+            background: url(../img/icon/icn-playstore.svg) no-repeat 0 0;
+        } */
+
+        #footerWrap {
+                height: 350px;
+                position: relative;
+                background: #171717;
+        }
+        .footer {
+                position: relative;
+                box-sizing: border-box;
+                min-height: 102px;
+                margin: 0 auto;
+                padding: 64px 64px 94px;
+                text-align: left;
+                color: rgba(255,255,255,.6);
+                font-size: 14px;
+        }
+        .footer a {
+                text-decoration: none;
+                
+                color: rgba(255,255,255,0.8);
+                padding: 30px auto;
+                font-weight: 700;
+        }
+        .ft_bx_ci .ft_ci {
+                font-size: 30px;
+                width: 120px;
+                height: 21px;
+                cursor: pointer;
+                text-align: left;
+
+        }
+        .ft_bx_copy .ft_copy_add {
+                margin-bottom: 20px;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 10px;
+                line-height: 1.85;
+        }
+        .ft_bx_policy {
+                padding-top: 50px;
+                font-size: 12px;
+        }
+        .ft_bx_policy span {
+                padding:0 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- wrap begin -->
+    <div class="wrap" id="wrap">
+        <!-- header begin -->
+        <header class="header" id="header">
+            <div class="gnb">
+                <h1 class="logo sp_ico"><a href="https://www.netmarble.net"><span class="blind">netmarble</span></a>
+                </h1>
+                <div id="divLogin">
+                    <div class="lg_box">
+                        <a href="https://login.netmarble.net" class="link_login"><span class="sp_ico"></span>로그인</a>
+                        <div class="lg_btm">
+                            <span class="sp_join"><a href="https://member.netmarble.net/Join/Index.Asp"><em>회원가입</em></a></span>
+                            <span class="split">/</span>
+                            <span class="sp_secure on"><em>보안접속</em></a> <strong>ON</strong></span>
+                           
+                        </div>
+                    </div>
+            
+                </div>
+
+                <nav class="menu">
+                        <ul>
+                                
+                                <li class="mn-customer"><a href="https://helpdesk.netmarble.net" target="_top" data-trcode="pc_lnb_help">고객센터</a></li>
+                                
+                                <li class="mn-pc off"><a href="https://pcbang.netmarble.net/Popup/" data-trcode="pc_lnb_pcbang">넷마블PC방 <em class="ico">off</em></a></li>
+
+                                <li class="mn-event"><a href="https://event.netmarble.net/EventZone">이벤트</a></li>
+
+                                <li class="mn-ch"><a href="https://ch.netmarble.com" target="_blank">채널 넷마블</a></li>
+                                <li class="mn-store"><a href="https://www.netmarblestore.com/" target="_blank">넷마블 스토어</a></li>
+                        </ul>
+                </nav>
+              
+            </div>
+
+        </header>
+
+        <!-- header end -->
+
+
+        <!-- container begin -->
+        <div class="container">
+            <div class="content" id="content_nm_gamelist">
+
+                <div class="list_sort">
+                    <ul>
+                        <li><button type="button" class="on">#전체</button></li>
+                        <li><button type="button">#RPG</button></li>
+                        <li><button type="button">#전략</button></li>
+                        <li><button type="button">#액션</button></li>
+                        <li><button type="button">#퍼즐</button></li>
+                        <li><button type="button">#캐주얼/스포츠</button></li>
+                        <li><button type="button">#카드</button></li>
+                    </ul>
+                </div>
+                <div class="list_game">
+                    <ul class="list m_glist">
+                        <li> <a href="#bnsmkr">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2021/09/011433/bns_appicon.png"
+                                        alt="블레이드&amp;소울 레볼루션"></span> <span class="desc_wrap"> <strong
+                                        class="title">블레이드&amp;소울 레볼루션</strong> <span class="sp_ico ico_label hot"><i
+                                            class="blind"></i></span> <i class="cate">MMORPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.bnsmkr"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1220720235" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#bnsmkr"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#lineageII">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2020/07/021648/180_l2.jpg"
+                                        alt="리니지2 레볼루션"></span> <span class="desc_wrap"> <strong class="title">리니지2
+                                        레볼루션</strong> <span class="sp_ico ico_label hot"><i class="blind"></i></span>
+                                    <i class="cate">MMORPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.lineageII"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1090814275" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#lineageII"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#momak">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/09/071008/AOS_Market_512.png"
+                                        alt="모두의마블"></span> <span class="desc_wrap"> <strong
+                                        class="title">모두의마블</strong> <i class="cate">캐주얼</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.cjenm.ModooMarbleKakao"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id646315802" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#momak"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#fgok">
+                                <span class="img_wrap"><img
+                                        src="https://c3.img.netmarble.kr/web/6N/2017/11/201000/1_appicon_AOS_512.png"
+                                        alt="페이트/그랜드오더"></span> <span class="desc_wrap"> <strong
+                                        class="title">페이트/그랜드오더</strong> <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.fgok"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1241893973" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#fgok"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#rav">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/03/301439/app.png"
+                                        alt="레이븐 : BLESS"></span> <span class="desc_wrap"> <strong class="title">레이븐 :
+                                        BLESS</strong> <i class="cate">액션RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.rav"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id959447955" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#rav"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#monster">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2019/04/161028/180_AOS.png"
+                                        alt="몬스터길들이기"></span> <span class="desc_wrap"> <strong
+                                        class="title">몬스터길들이기</strong> <i class="cate">액션RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.cjenm.monster"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id667809404" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#monster"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#knightsgb">
+                                <span class="img_wrap"><img
+                                        src="https://c3.img.netmarble.kr/web/6N/2018/06/141235/Icon-180.png"
+                                        alt="나이츠크로니클"></span> <span class="desc_wrap"> <strong
+                                        class="title">나이츠크로니클</strong> <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.knightsgb"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://itunes.apple.com/app/id1261722683" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#knightsgb"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#n2baduk">
+                                <span class="img_wrap"><img
+                                        src="https://c1.img.netmarble.kr/web/6N/2016/05/131529/mobile_baduk.jpg"
+                                        alt="넷마블바둑"></span> <span class="desc_wrap"> <strong
+                                        class="title">넷마블바둑</strong> <i class="cate">전략</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.n2baduk"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1172146104" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#n2baduk"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#skrv">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/07/271112/iOS_152.png"
+                                        alt="세븐나이츠 레볼루션"></span> <span class="desc_wrap"> <strong class="title">세븐나이츠
+                                        레볼루션</strong> <span class="sp_ico ico_label new"><i class="blind"></i></span>
+                                    <i class="cate">MMORPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.skrv"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1488570532?l=kr" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#skrv"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#mkgb">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/09/161102/merge192x192.jpg"
+                                        alt="머지 쿵야 아일랜드"></span> <span class="desc_wrap"> <strong class="title">머지 쿵야
+                                        아일랜드</strong> <span class="sp_ico ico_label new"><i class="blind"></i></span>
+                                    <i class="cate">캐주얼</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.mkglobal"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/app/id1625027068" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#mkgb"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#ma9rekr">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/08/041011/1_ios_1024.jpg"
+                                        alt="넷마블 프로야구 2022"></span> <span class="desc_wrap"> <strong class="title">넷마블
+                                        프로야구 2022</strong> <span class="sp_ico ico_label new"><i
+                                            class="blind"></i></span> <i class="cate">스포츠</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.ma9rekr"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1595062180" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#ma9rekr"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#marvelfr">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2021/08/311214/mfr_appicon.png"
+                                        alt="마블 퓨처 레볼루션"></span> <span class="desc_wrap"> <strong class="title">마블 퓨처
+                                        레볼루션</strong> <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.marvelfr"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1453366542?l=kr" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#marvelfr"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#enn">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/08/121540/Android_Market_512.png"
+                                        alt="제2의 나라: Cross Worlds"></span> <span class="desc_wrap"> <strong
+                                        class="title">제2의 나라: Cross Worlds</strong> <span
+                                        class="sp_ico ico_label hot"><i class="blind"></i></span> <i
+                                        class="cate">MMORPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.enn"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1488423517" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#enn"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#sknightsmmo">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/07/071559/sk2_app.png"
+                                        alt="세븐나이츠2"></span> <span class="desc_wrap"> <strong
+                                        class="title">세븐나이츠2</strong> <span class="sp_ico ico_label hot"><i
+                                            class="blind"></i></span> <i class="cate">MMORPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.sknightsmmo"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1365505269" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#sknightsmmo"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#pan">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2020/09/241550/200923_120.jpg"
+                                        alt="BTS Universe Story"></span> <span class="desc_wrap"> <strong
+                                        class="title">BTS Universe Story</strong> <i class="cate">캐주얼</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.pan"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1469005775" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#pan"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#ma9bkr">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2022/03/241114/ios_180.png"
+                                        alt="마구마구 2022"></span> <span class="desc_wrap"> <strong class="title">마구마구
+                                        2022</strong> <i class="cate">스포츠</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.ma9bkr"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1516727770" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#ma9bkr"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#stonemmogb">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/images/netmarble/stonemmogb/20210323/clx21616479253993.png"
+                                        alt="스톤에이지 월드"></span> <span class="desc_wrap"> <strong class="title">스톤에이지
+                                        월드</strong> <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.stonemmogb"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/app/id1400683584" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#stonemmogb"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#survival">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2020/03/111720/180_191022_A3_512.jpg"
+                                        alt="A3: 스틸얼라이브"></span> <span class="desc_wrap"> <strong class="title">A3:
+                                        스틸얼라이브</strong> <span class="sp_ico ico_label hot"><i
+                                            class="blind"></i></span> <i class="cate">MMORPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.survival"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1417738826" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#survival"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#koongyacm">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2019/08/071530/180_yrzo1563958278171.png"
+                                        alt="쿵야 캐치마인드"></span> <span class="desc_wrap"> <strong class="title">쿵야
+                                        캐치마인드</strong> <i class="cate">캐주얼</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.koongyacm"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1334005595" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#koongyacm"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#btsw">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2019/06/261747/180_AOS_512.png"
+                                        alt="BTS WORLD"></span> <span class="desc_wrap"> <strong class="title">BTS
+                                        WORLD</strong> <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.btsw"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/app/id1435577798" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#btsw"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#nanakr">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2021/07/011222/7_Android_Market_app.png"
+                                        alt="일곱 개의 대죄"></span> <span class="desc_wrap"> <strong class="title">일곱 개의
+                                        대죄</strong> <span class="sp_ico ico_label hot"><i class="blind"></i></span>
+                                    <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.nanakr"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1449552940" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#nanakr"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#kofkr">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2019/05/131628/180_rh3k1554707791393.png"
+                                        alt="킹 오브 파이터 올스타"></span> <span class="desc_wrap"> <strong class="title">킹 오브
+                                        파이터 올스타</strong> <i class="cate">RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.kofkr"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1439768881" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#kofkr"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#mmatgo">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2019/06/251732/180_daebak.png"
+                                        alt="윈조이 대박맞고"></span> <span class="desc_wrap"> <strong class="title">윈조이
+                                        대박맞고</strong> <i class="cate">맞고</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.mmatgo"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1484746382" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#mmatgo"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#mherosgb">
+                                <span class="img_wrap"><img
+                                        src="https://c3.img.netmarble.kr/web/6N/2015/12/161925/mherosgb_mobile.jpg"
+                                        alt="마블 퓨처파이트"></span> <span class="desc_wrap"> <strong class="title">마블
+                                        퓨처파이트</strong> <i class="cate">액션RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.mherosgb"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id955705796" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#mherosgb"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#mpoker">
+                                <span class="img_wrap"><img
+                                        src="https://c2.img.netmarble.kr/web/6N/2019/06/251810/180_poker.png"
+                                        alt="모바일 윈조이 포커"></span> <span class="desc_wrap"> <strong class="title">모바일 윈조이
+                                        포커</strong> <i class="cate">포커</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.netmarble.mpoker"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id1472968853" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#mpoker"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+                        <li> <a href="#sknights">
+                                <span class="img_wrap"><img
+                                        src="https://sgimage.netmarble.com/web/6N/2021/09/021655/sk_appicon.jpg"
+                                        alt="세븐나이츠"></span> <span class="desc_wrap"> <strong
+                                        class="title">세븐나이츠</strong> <i class="cate">액션RPG</i> </span> </a>
+                            <div class="btn_wrap"> <a
+                                    href="https://play.google.com/store/apps/details?id=com.cjenm.sknights"
+                                    target="_blank" class="link_playstore"><span class="blind">구글 플레이스토어</span></a> <a
+                                    href="https://apps.apple.com/kr/app/id741949324" target="_blank"
+                                    class="link_appstore"><span class="blind">애플 앱스토어</span> </a><a href="#sknights"
+                                    class="link_home">
+                                    <span class="blind">test</span> </a> </div>
+                        </li>
+
+                    </ul>
+                
+
+
+                </div>
+            </div>
+            <!-- footer begin -->
+            <div id="footerWrap" class="footer_wrap">
+                <div class="footer">
+                        <div class="ft_bx_lt">
+                                <div class="ft_bx_ci">
+                                        <a href="http://company.netmarble.com" class="ft_ci sp_ico" id="footerLogo">
+                                        <span class="blind">netmarble</span></a>
+                                </div>
+                                <div class="ft_bx_copy">
+                                        <p class="ft_copy_add">
+                                                넷마블(주) 사업자번호 : 105-87-64746 통신판매업신고번호 : 제 2014-서울구로-1028호 각자 대표집행임원: 권영식, 도기욱 호스팅서비스 사업자 : 넷마블(주)<br />
+                                                서울특별시 구로구 디지털로26길 38, G-Tower 넷마블 | PC고객센터:1588-5180 / 모바일고객센터:1588-3995 / 제2의나라 고객센터:1670-0359 / 블레이드&소울 레볼루션 고객센터:1670-1182 / 리니지2 레볼루션 고객센터:1670-8212 / Fax:02-6375-1790
+                                        </p>
+                                        <p class="ft_copy">Copyright © Netmarble Corp. All Rights Reserved.</p>
+                                </div>
+                                <div class="ft_bx_policy">
+                                        <a href="http://company.netmarble.com" target="_blank" onclick="clickrd('201404010097');">회사소개</a>
+                                        <span>|</span> <a href="http://www.netmarble.net/pop/adInfo" onclick="clickrd('201404010099'); WINDOW.open.common(this.href,'MainAd',468,341);return false;">광고/제휴문의</a>
+                                        <span>|</span> <a href="http://helpdesk.netmarble.net/HelpStipulation.asp" target="_self" onclick="clickrd('201404010100');">약관보기</a>
+                                        <span>|</span> <a href="https://helpdesk.netmarble.net/HelpLocationService.asp" target="_self" onclick="clickrd('201404010101');">위치정보이용약관</a>
+                                        <span>|</span> <a href="http://helpdesk.netmarble.net/HelpPrivacy.asp" target="_self" onclick="clickrd('201404010101');"><strong>개인정보처리방침</strong></a>
+                                        <span>|</span> <a href="http://helpdesk.netmarble.net/HelpTeenager.asp" target="_self" onclick="clickrd('201404010102');">청소년보호정책</a>
+                                        <span>|</span> <a href="http://helpdesk.netmarble.net/HelpNoMember.asp" target="_self" onclick="clickrd('201404010103');">전자우편</a>
+                                        <span>|</span> <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=1058764746" target="_blank" onclick="clickrd('201404010104');WINDOW.open.common(this.href, 'bizCommPop',770, 920);return false;"><strong>사업자정보공개사이트</strong></a>
+                                        <span>|</span> <a href="http://helpdesk.netmarble.net/sitemap.asp" target="_self" onclick="clickrd('201404010105');">사이트맵</a>
+                                    </div>
+                        </div>
+                </div>
+        </div>
+         <!-- footer end -->
+        </div>
+        <!-- container end -->
+
+         
+    </div>
+    <!-- wrap  end -->
+
+
+
+
+   
+</body>
+
+</html>
